@@ -43,3 +43,12 @@
 ## 📄 许可证
 
 本项目基于 [MIT License](./LICENSE) 开源。
+
+
+## 📚 文档索引
+
+- [已知问题与限制](./KNOWN_ISSUES.md) — 了解技术限制和常见问题
+- [常见问题 (FAQ)](./FAQ.md) — 快速解答使用中的疑惑
+- [更新日志](./CHANGELOG.md) — 查看每个版本的变化
+- [贡献指南](./CONTRIBUTING.md) — 了解如何参与项目
+- [行为准则](./CODE_OF_CONDUCT.md) — 社区行为规范
