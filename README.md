@@ -3,7 +3,7 @@
 **增强 DeepSeek 网页版功能的浏览器扩展，让对话管理更高效。**
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
-[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
 
 ## ✨ 核心功能
 
@@ -43,7 +43,7 @@
 
 ## 📄 许可证
 
-本项目基于 [MIT License](./LICENSE) 开源。
+本项目基于 [Apache License 2.0](./LICENSE) 开源。
 
 
 ## 📚 文档索引
