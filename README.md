@@ -1,10 +1,11 @@
+```markdown
 # DeepSeek 助手 🐋
 
 **增强 DeepSeek 网页版功能的浏览器扩展，让对话管理更高效。**
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
-![Version](https://img.shields.io/badge/version-1.2.0-brightgreen)
+![Version](https://img.shields.io/badge/version-1.3.0-brightgreen)
 
 ## ✨ 核心功能
 
@@ -19,9 +20,14 @@
 - **文件夹管理**：自定义文件夹，支持搜索、重命名、删除，通过下拉菜单快速筛选
 - **消息收藏增强**：卡片式展示，可添加备注，点击跳转回原对话并**精准定位**
 - **统计信息**：对话、消息收藏数量实时显示，并展示**今日/本周新增**
-- **时间显示**：支持切换相对时间（3分钟前）与绝对时间（2026/5/21 14:30）
+- **时间显示**：支持切换相对时间（3分钟前）与绝对时间（2026/5/21 14:30），时间描述已国际化
 - **批量操作**：一键清空全部收藏（带二次确认）
 - **导入导出**：支持 JSON/TXT/Markdown 导出（文件名精确到秒），JSON 备份可导入恢复
+
+### 🌐 国际化 (New)
+- **全界面中英文切换**：覆盖所有标签页、弹窗、按钮、提示文字，约 **120 个翻译键**
+- **智能语言检测**：自动识别浏览器语言并应用，切换即时生效无需刷新
+- **可扩展**：新增语言只需在语言包中添加翻译键值对，无需修改任何业务代码
 
 ### 🎨 外观与操作
 - **6套预设主题**：深海蓝、经典黑、护眼绿…… 支持自定义取色器与跟随系统模式
@@ -32,6 +38,8 @@
 - **快捷键**：`Alt+K` 呼出面板，`Ctrl+Shift+X` 收藏对话，`Esc` 关闭面板
 
 ### 🧩 其他贴心功能
+- **设置页重构**：结构化的设置中心，清晰展示语言、快捷操作、数据安全提示
+- **存储用量监控**：实时显示已用空间（精确百分比），超过 80% 警告，超过 95% 严重警告
 - **文件夹下拉菜单**：支持搜索文件夹名，匹配关键词高亮，新建按钮固定可见
 - **移动到文件夹弹窗**：添加搜索框、滚动条美化、匹配计数，文件夹过多时轻松定位
 - **消息卡片标题优化**：同对话多条消息收藏时，标题自动追加序号（如 2/5）
@@ -39,6 +47,28 @@
 - **导出文件名时间戳**：避免多次导出时文件重名覆盖
 - **面板边界保护**：窗口缩小时自动修正面板位置，确保始终可见
 - **标题栏拖拽防误触**：需移动超过 5px 才触发面板拖动
+- **字体渲染优化**：Windows 下中文字体清晰锐利，无笔画重叠
+
+## 🏗️ 项目结构 (v1.3.0 模块化)
+DeepSeek-Assistant/
+├── manifest.json
+├── panel.html              # 面板静态结构
+├── panel.css               # 全部样式
+├── background.js           # 后台中转
+├── content.js              # 页面交互
+├── panel.js                # 主控 (~250行)
+└── panel-modules/          # 业务模块
+    ├── module-i18n.js      # 国际化
+    ├── module-storage.js   # 存储与通信
+    ├── module-dom.js       # DOM 工具
+    ├── module-theme.js     # 主题系统
+    ├── module-panel.js     # 面板控制
+    ├── module-history.js   # 历史搜索
+    ├── module-search.js    # 对话搜索
+    ├── module-bookmarks.js # 对话收藏
+    ├── module-messages.js  # 消息收藏
+    └── module-folders.js   # 文件夹管理
+```
 
 ## 📥 安装方式
 
@@ -47,18 +77,12 @@
 > *（插件审核通过后，链接将自动更新）*
 
 ### 方式二：开发者模式侧载
-1. 在本仓库顶部点击绿色的 **`<> Code`** 按钮，选择 **`Download ZIP`** 下载并解压
+1. 在本仓库 [Releases](https://github.com/lOVE-o837/Deepseek-assistant/releases) 页面下载最新版本的 `Source code (zip)` 并解压
 2. 打开 Edge 浏览器，在地址栏输入 `edge://extensions` 回车
 3. 开启左下角的 **“开发人员模式”**
-4. 点击 **“加载解压缩的扩展”**，选择刚刚解压的文件夹
-5. 打开 `https://chat.deepseek.com`，按 `Alt+K` 开始使用
+4. 点击 **“加载解压缩的扩展”**，选择刚解压的文件夹即可
 
-## 🐛 已知问题与限制
-
-技术限制（受限于 DeepSeek 网页架构，非插件 Bug）：
-- **当前对话搜索范围**：受虚拟滚动限制，仅覆盖视口附近约 5-8 条消息
-- **消息收藏跳转定位**：极远处消息可能因加载时间过长而超时
-- **子对话收藏限制**：同一母对话下的子对话因共享 URL，暂不支持独立收藏
+```
 
 > 更多详情请查阅 [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
 
