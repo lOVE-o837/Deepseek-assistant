@@ -1,4 +1,5 @@
-# DeepSeek 助手 🐋
+# DeepSeek 助手 <img width="64" height="64" alt="icon48" src="https://github.com/user-attachments/assets/a284a367-9dc2-4ace-9ec4-acaf1ee8a9e3" />
+
 
 **增强 DeepSeek 网页版功能的浏览器扩展，让对话管理更高效。**
 
