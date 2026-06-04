@@ -52,7 +52,7 @@
 
 ## 🏗️ Project Structure (v1.4.0 Modular Architecture)
 
-```
+```text
 DeepSeek-Assistant/
 ├── manifest.json
 ├── panel.html              # Panel static structure
