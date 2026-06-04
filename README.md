@@ -1,4 +1,3 @@
-```markdown
 # DeepSeek 助手
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
@@ -64,5 +63,5 @@
 
 ## 📄 许可证
 
-基于 [Apache License 2.0](./LICENSE) 开源 © [{{你的用户名}}](https://github.com/{{你的用户名}})
+基于 [Apache License 2.0](./LICENSE) 开源 © [{{lOVE-o837}}](https://github.com/{{lOVE-o837}})
 ```
