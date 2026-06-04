@@ -1,0 +1,74 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek 助手",
+  "version": "1.4.0",
+  "description": "增强 DeepSeek 网页版功能的浏览器扩展，提供对话搜索、收藏管理、主题切换等功能",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "DeepSeek助手"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://chat.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*"
+      ],
+      "js": [
+        "content/content-utils.js",
+        "content/content-panel.js",
+        "content/content-bookmark.js",
+        "content/content-float-btn.js",
+        "content/content-sidebar.js",
+        "content/content-search.js",
+        "content/content-core.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-panel": {
+      "suggested_key": {
+        "default": "Alt+K"
+      },
+      "description": "打开/关闭DeepSeek助手面板"
+    },
+    "toggle-bookmark": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X"
+      },
+      "description": "收藏当前对话"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "panel.html",
+        "panel.css",
+        "panel.js",
+        "about.html"
+      ],
+      "matches": [
+        "https://chat.deepseek.com/*"
+      ]
+    }
+  ]
+}
