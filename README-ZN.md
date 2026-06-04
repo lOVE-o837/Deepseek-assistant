@@ -50,33 +50,34 @@
 - **字体渲染优化**：Windows 下中文字体清晰锐利，无笔画重叠
 
 ## 🏗️ 项目结构 (v1.4.0 模块化架构)
+
+```text
 DeepSeek-Assistant/
 ├── manifest.json
-├── panel.html # 面板静态结构
-├── panel.css # 全部样式
-├── background.js # 后台中转（消息路由、存储代理）
-├── panel.js # 主控 (~250行)
-├── content/ # Content Script 模块（原 2141 行 content.js 拆分）
-│ ├── content-utils.js # 12个纯工具函数
-│ ├── content-panel.js # 面板 iframe 注入/拖拽/位置记忆
-│ ├── content-bookmark.js # 对话收藏 + 消息收藏系统
-│ ├── content-float-btn.js # 悬浮按钮 + SPA 监听
-│ ├── content-sidebar.js # 侧边栏对话列表抓取
-│ ├── content-search.js # 当前页面内容搜索 + 高亮定位
-│ └── content-core.js # 核心骨架（初始化、消息路由、对话框等）
-└── panel-modules/ # 面板业务模块
-├── module-i18n.js # 国际化（150+ 翻译键）
-├── module-storage.js # 存储与通信
-├── module-dom.js # DOM 工具
-├── module-theme.js # 主题系统
-├── module-panel.js # 面板控制、设置页、统计
-├── module-history.js # 历史搜索
-├── module-search.js # 当前对话搜索
-├── module-bookmarks.js # 对话收藏管理
-├── module-messages.js # 消息收藏管理
-└── module-folders.js # 文件夹管理
-
-text
+├── panel.html              # 面板静态结构
+├── panel.css               # 全部样式
+├── background.js           # 后台中转（消息路由、存储代理）
+├── panel.js                # 主控 (~250行)
+├── content/                # Content Script 模块（原 2141 行 content.js 拆分）
+│   ├── content-utils.js        # 12个纯工具函数
+│   ├── content-panel.js        # 面板 iframe 注入/拖拽/位置记忆
+│   ├── content-bookmark.js     # 对话收藏 + 消息收藏系统
+│   ├── content-float-btn.js    # 悬浮按钮 + SPA 监听
+│   ├── content-sidebar.js      # 侧边栏对话列表抓取
+│   ├── content-search.js       # 当前页面内容搜索 + 高亮定位
+│   └── content-core.js         # 核心骨架（初始化、消息路由、对话框等）
+└── panel-modules/          # 面板业务模块
+    ├── module-i18n.js      # 国际化（150+ 翻译键）
+    ├── module-storage.js   # 存储与通信
+    ├── module-dom.js       # DOM 工具
+    ├── module-theme.js     # 主题系统
+    ├── module-panel.js     # 面板控制、设置页、统计
+    ├── module-history.js   # 历史搜索
+    ├── module-search.js    # 当前对话搜索
+    ├── module-bookmarks.js # 对话收藏管理
+    ├── module-messages.js  # 消息收藏管理
+    └── module-folders.js   # 文件夹管理
+```
 
 ## 📥 安装方式
 
