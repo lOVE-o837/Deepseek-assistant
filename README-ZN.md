@@ -104,4 +104,6 @@ text
 
 - [已知问题与限制](./KNOWN_ISSUES.md) — 了解技术限制和常见问题
 - [常见问题 (FAQ)](./FAQ.md) — 快速解答使用中的疑惑
-- [更新日志 (CHANGELOG)](./CHANGELOG.md) — 查看版本更新详情
+  
+## 📝 更新日志
+完整版本历史请查阅 [CHANGELOG.md](./CHANGELOG.md)。
