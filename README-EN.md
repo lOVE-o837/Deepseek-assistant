@@ -90,12 +90,12 @@ DeepSeek-Assistant/
 3. Turn on **"Developer mode"** in the bottom left corner.
 4. Click **"Load unpacked"** and select the extracted folder.
 
-> For more details, please refer to [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
+> For more details, please refer to [KNOWN_ISSUES.md](./docs/KNOWN_ISSUES.md)
 
 ## 🤝 Contributing
 
 Bug reports, feature suggestions, and Pull Requests are welcome!
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) first for contribution guidelines.
+Please read [CONTRIBUTING.md](./docs/CONTRIBUTING.md) first for contribution guidelines.
 
 ## 📄 License
 
@@ -103,10 +103,10 @@ This project is open-sourced under the [Apache License 2.0](./LICENSE).
 
 ## 📚 Documentation Index
 
-- [Known Issues & Limitations](./KNOWN_ISSUES.md) — Technical constraints and common issues
+- [Known Issues & Limitations](./docs/KNOWN_ISSUES.md) — Technical constraints and common issues
 - [FAQ](./FAQ.md) — Quick answers to your questions
+- [SHOWCASE](./SHOWCASE.md) — Feature screenshots
 
 ## 📝 Changelog
 
 See [CHANGELOG.md](./CHANGELOG.md) for full version history.
-```
