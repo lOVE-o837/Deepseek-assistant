@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# DeepSeek 助手 🐋
+# DeepSeek 助手 <img width="64" height="64" alt="icon48" src="https://github.com/user-attachments/assets/a284a367-9dc2-4ace-9ec4-acaf1ee8a9e3" />
+
 
 **增强 DeepSeek 网页版功能的浏览器扩展，让对话管理更高效。**
 
@@ -110,15 +110,3 @@ DeepSeek-Assistant/
 ## 📝 更新日志
 
 完整版本历史请查阅 [CHANGELOG.md](./CHANGELOG.md)。
-=======
-# DeepSeek Assistant
-[English](./README-EN.md) | [中文](./README-ZN.md)
-
-> A browser extension that enhances DeepSeek web app.
-
-![Panel Screenshot](./docs/screenshots/panel.png)
-
-**Features** – Search, Favorites, Themes, i18n …
-
-**[Full Documentation](./docs/)**
->>>>>>> f2ee0e51214481c4c19f412b866db32306765c66
