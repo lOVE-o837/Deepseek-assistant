@@ -1,6 +1,5 @@
 # DeepSeek 助手 <img width="64" height="64" alt="icon48" src="https://github.com/user-attachments/assets/a284a367-9dc2-4ace-9ec4-acaf1ee8a9e3" />
 
-
 **增强 DeepSeek 网页版功能的浏览器扩展，让对话管理更高效。**
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
@@ -91,12 +90,12 @@ DeepSeek-Assistant/
 3. 开启左下角的 **"开发人员模式"**
 4. 点击 **"加载解压缩的扩展"**，选择刚解压的文件夹即可
 
-> 更多详情请查阅 [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
+> 更多详情请查阅 [KNOWN_ISSUES.md](./docs/KNOWN_ISSUES.md)
 
 ## 🤝 参与贡献
 
 欢迎提交 Bug 报告、功能建议或 Pull Request！
-请先查阅 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解贡献规范。
+请先查阅 [CONTRIBUTING.md](./docs/CONTRIBUTING.md) 了解贡献规范。
 
 ## 📄 许可证
 
@@ -104,9 +103,11 @@ DeepSeek-Assistant/
 
 ## 📚 文档索引
 
-- [已知问题与限制](./KNOWN_ISSUES.md) — 了解技术限制和常见问题
+- [已知问题与限制](./docs/KNOWN_ISSUES.md) — 了解技术限制和常见问题
 - [常见问题 (FAQ)](./FAQ.md) — 快速解答使用中的疑惑
+- [功能展示](./SHOWCASE.md) — 核心功能截图与说明
 
 ## 📝 更新日志
 
 完整版本历史请查阅 [CHANGELOG.md](./CHANGELOG.md)。
+```
