@@ -1,4 +1,3 @@
-```markdown
 # DeepSeek Assistant <img width="64" height="64" alt="icon128" src="https://github.com/user-attachments/assets/aeb06d74-cb06-4eb0-a1e0-0b21cb48fc4f" />
 
 **A browser extension that enhances the DeepSeek web app, making conversation management more efficient.**
