@@ -1,0 +1,179 @@
+/* ============================================================
+   content.css — DeepSeek助手 页面注入样式
+   悬浮按钮、面板iframe遮罩、Toast提示等
+   所有选择器使用 ds-assistant- 前缀避免冲突
+   ============================================================ */
+
+/* ---------- 悬浮收藏按钮 ---------- */
+#ds-assistant-float-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  z-index: 2147483646;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4), 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#ds-assistant-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(102, 126, 234, 0.55), 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+#ds-assistant-float-btn:active {
+  transform: scale(0.95);
+}
+
+/* 动态主题悬浮按钮（由 content.js 注入 CSS 自定义属性驱动） */
+#ds-assistant-float-btn.ds-theme-dynamic {
+  background: var(--ds-float-btn-bg, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+  box-shadow: 0 4px 16px var(--ds-float-btn-glow, rgba(102, 126, 234, 0.4)), 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: var(--ds-float-btn-text, #ffffff);
+}
+
+#ds-assistant-float-btn.ds-theme-dynamic:hover {
+  box-shadow: 0 6px 24px var(--ds-float-btn-glow-hover, rgba(102, 126, 234, 0.55)), 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- 面板遮罩层 ---------- */
+#ds-assistant-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483645;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+#ds-assistant-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- 面板 iframe ---------- */
+#ds-assistant-panel-iframe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 2147483647;
+  width: 480px;
+  height: 640px;
+  max-width: 92vw;
+  max-height: 88vh;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25), 0 4px 16px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  background: #ffffff;
+}
+
+#ds-assistant-panel-iframe.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ---------- 浮层 Toast ---------- */
+.ds-assistant-float-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  z-index: 2147483648;
+  padding: 10px 24px;
+  background: #1a1a2e;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ds-assistant-float-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---------- 响应式：小屏幕面板全屏 ---------- */
+@media (max-width: 520px) {
+  #ds-assistant-panel-iframe {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    transform: scale(0.95);
+  }
+
+  #ds-assistant-panel-iframe.visible {
+    transform: scale(1);
+  }
+}
+
+/* ---------- 减少动画（用户偏好） ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #ds-assistant-overlay,
+  #ds-assistant-panel-iframe,
+  .ds-assistant-float-toast,
+  #ds-assistant-float-btn {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- 搜索关键词高亮 ---------- */
+.highlight,
+mark {
+  background-color: #ff4d4f !important;
+  color: #ffffff !important;
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+/* Windows 10 下中文最佳渲染：交给系统 ClearType */
+body {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: auto;
+}
+
+#tab-about p, #tab-about li, #tab-about td {
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+#tab-about p, #tab-about li, #tab-about td {
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+#tab-about li {
+  padding-left: 2.8em;
+  text-indent: -2.8em;
+  margin-bottom: 8px;
+  line-height: 1.7;
+}

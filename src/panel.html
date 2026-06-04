@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek助手</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body class="theme-deep-blue">
+  <!-- ==================== 主面板容器 ==================== -->
+  <div id="ds-assistant-panel" class="panel-container">
+    <!-- 面板头部：标题栏 -->
+    <div class="panel-header">
+      <div class="panel-logo">
+        <img class="logo-icon" src="icon128.png" alt="logo" draggable="false">
+        <h1 class="panel-title"><span id="settings-title" data-i18n="settingsTitle">DeepSeek 助手</span></h1>
+      </div>
+      <div class="header-actions">
+        <button id="btn-reset-position" class="header-btn" title="重置面板位置">⟲</button>
+    <button id="btn-minimize" class="header-btn" data-i18n-title="minimize">&#x2014;</button>
+        <button id="btn-close" class="header-btn header-btn-close" data-i18n-title="closePanel">&times;</button>
+      </div>
+    </div>
+
+    <!-- 标签页导航栏 -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="history-search">
+        <span class="tab-icon">&#x1F50D;</span>
+        <span class="tab-label" data-i18n="tabHistorySearch">历史搜索</span>
+      </button>
+      <button class="tab-btn" data-tab="current-search">
+        <span class="tab-icon">&#x1F4C4;</span>
+        <span class="tab-label" data-i18n="tabCurrentSearch">当前对话搜索</span>
+      </button>
+      <button class="tab-btn" data-tab="bookmarks">
+        <span class="tab-icon">&#x2B50;</span>
+        <span class="tab-label" data-i18n="tabBookmarks">收藏夹</span>
+      </button>
+      <button class="tab-btn" data-tab="theme">
+        <span class="tab-icon">&#x1F3A8;</span>
+        <span class="tab-label" data-i18n="tabTheme">主题</span>
+      </button>
+      <button class="tab-btn" data-tab="about">
+        <span class="tab-icon">&#x2139;&#xFE0F;</span>
+        <span class="tab-label" data-i18n="tabAbout">关于</span>
+      </button>
+    </nav>
+
+    <!-- ==================== 标签页内容区域 ==================== -->
+
+    <!-- 1. 历史搜索 -->
+    <div id="tab-history-search" class="tab-content active">
+      <div class="search-bar">
+        <input type="text" id="history-search-input" class="search-input" placeholder="">
+        <button id="btn-history-refresh" class="btn btn-outline btn-sm" title=""></button>
+    <button id="btn-history-export" class="btn btn-outline btn-sm" title=""></button>
+    <button id="btn-history-sort" class="btn btn-outline btn-sm" title=""></button>
+      </div>
+      <div class="search-stats">
+        <span id="history-count">正在加载对话列表...</span>
+      </div>
+      <div id="history-list" class="list-container">
+        <div class="empty-state">
+          <span class="empty-icon">&#x1F4AD;</span>
+          <p data-i18n="historyEmptyTitle">暂无对话记录</p>
+          <p class="empty-hint" data-i18n="historyEmptyHint">请在DeepSeek页面使用快捷键 Alt+K 打开面板，从侧边栏加载对话列表</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 当前对话搜索 -->
+    <div id="tab-current-search" class="tab-content">
+      <div class="search-bar">
+        <input type="text" id="current-search-input" class="search-input" data-i18n-placeholder="searchInputPlaceholder" placeholder="搜索关键词...">
+        <button id="btn-current-search-exec" class="btn btn-primary btn-sm" data-i18n="searchExecBtn">搜索</button>
+        <button id="btn-current-sort" class="btn btn-outline btn-sm" title="切换时间排序" style="display:none;">时间正序</button>
+      </div>
+      <div class="search-stats">
+        <span id="current-search-count" data-i18n="searchTypeHint">输入关键词后按回车或点击搜索</span>
+      </div>
+      <div id="current-search-results" class="list-container">
+        <div class="empty-state">
+          <span class="empty-icon">&#x1F50E;</span>
+          <p data-i18n="searchEmptyTitle">在当前页面对话内容中搜索</p>
+          <p class="empty-hint" data-i18n="searchEmptyHint">支持搜索对话标题、用户消息和AI回复内容</p>
+          <p class="empty-hint" style="font-size:11px; opacity:0.8; margin-top:8px;" data-i18n="searchEmptyHint2">⚠️ 受页面虚拟滚动限制，仅能搜索到视口附近约 5-8 条消息</p>
+          <p class="empty-hint" style="font-size:11px; opacity:0.6;" data-i18n="searchEmptyHint3">💡 建议：滚动到目标区域后再搜索，或使用DeepSeek官方的全局搜索查找</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 收藏夹 -->
+    <div id="tab-bookmarks" class="tab-content">
+      <div class="bookmark-toolbar">
+        <div class="search-bar" style="flex:1;margin-bottom:0;">
+          <input type="text" id="bookmark-search-input" class="search-input" data-i18n-placeholder="bookmarkSearchPlaceholder" placeholder="搜索收藏项...">
+        </div>
+        <select id="bookmark-sort" class="sort-select">
+          <option value="newest" data-i18n="bookmarkSortNewest">按时间降序</option>
+          <option value="oldest" data-i18n="bookmarkSortOldest">按时间升序</option>
+          <option value="title" data-i18n="bookmarkSortTitle">按标题排序</option>
+        </select>
+        <div class="bookmark-actions" style="position:relative;">
+          <button id="btn-bookmark-ops" class="btn btn-outline btn-sm" data-i18n="bookmarkOpsBtn">⚙️ 操作</button>
+          <div id="bookmark-ops-menu" class="dropdown-menu" style="display:none;position:absolute;right:0;top:100%;z-index:100;">
+        <button class="dropdown-item" data-action="export" data-i18n="bookmarkOpsExport">📥 导出</button>
+        <button class="dropdown-item" data-action="import" data-i18n="bookmarkOpsImport">📤 导入</button>
+        <button class="dropdown-item" data-action="clear" style="color:#e74c3c;" data-i18n="bookmarkOpsClear">🗑️ 清空</button>
+          </div>
+          <input type="file" id="import-file-input" accept=".json" style="display:none;">
+        </div>
+      </div>
+      <div class="search-stats">
+        <span id="bookmark-count">共 0 项收藏</span>
+      </div>
+      <div id="bookmark-list" class="list-container">
+        <div class="empty-state">
+          <span class="empty-icon">⭐</span>
+          <p data-i18n="bookmarksEmpty">收藏夹为空</p>
+          <p class="empty-hint" data-i18n="bookmarksEmptyHint1">一站式管理重要对话，支持排序、搜索与 JSON/TXT 导出备份</p>
+          <p class="empty-hint" style="margin-top:8px;" data-i18n="bookmarksEmptyHint2">⭐ 点击页面右下角悬浮按钮，或使用快捷键 Ctrl+Shift+X 收藏当前对话</p>
+          <p class="empty-hint" style="margin-top:4px;" data-i18n="bookmarksEmptyHint3">🔍 在历史搜索和当前对话搜索结果中，右键对话也可快速收藏</p>
+        </div>
+      </div>
+
+      <!-- 消息收藏区 -->
+      <div id="message-bookmark-count" class="search-stats" style="margin-top:8px;padding:1.8px 0;font-size:12px;line-height:1.1;display:none;"></div>
+      <div id="message-bookmark-list" class="list-container">
+        <div class="empty-state">
+          <span class="empty-icon">💬</span>
+          <p data-i18n="messagesEmpty">暂无消息收藏</p>
+          <p class="empty-hint" data-i18n="messagesEmptyHint">在对话页面中，鼠标悬停消息，点击星标按钮收藏单条消息</p>
+        </div>
+      </div>
+    <div class="absolute-time-toggle" style="margin-top:auto; padding:8px 12px; display:flex; align-items:center; gap:8px; border-top:1px solid var(--border-color); font-size:12px;">
+          <label for="toggle-absolute-time" style="cursor:pointer;"><span id="toggle-absolute-time-label" data-i18n="displayAbsoluteTime">显示绝对时间</span></label>
+      <input type="checkbox" id="toggle-absolute-time">
+    </div>
+    </div>
+
+    <!-- 4. 主题 -->
+    <div id="tab-theme" class="tab-content">
+      <div class="theme-section">
+        <h3 class="section-title"><span id="theme-title" data-i18n="themeTitle">🎨 选择主题</span></h3>
+        <div id="theme-card-grid" class="theme-card-grid"></div>
+      </div>
+      <div class="theme-section">
+        <h3 class="section-title"><span id="theme-font-size-label" data-i18n="fontSize">字体大小</span></h3>
+        <div class="font-size-options" id="font-size-options">
+          <label class="font-option" data-font="small">
+            <input type="radio" name="font-size" value="small">
+            <span id="theme-font-small" data-i18n="fontSmall">小</span>
+          </label>
+          <label class="font-option" data-font="medium">
+            <input type="radio" name="font-size" value="medium" checked>
+            <span id="theme-font-medium" data-i18n="fontMedium">中</span>
+          </label>
+          <label class="font-option" data-font="large">
+            <input type="radio" name="font-size" value="large">
+            <span id="theme-font-large" data-i18n="fontLarge">大</span>
+          </label>
+        </div>
+      </div>
+      <div class="theme-section">
+        <h3 class="section-title"><span id="theme-float-btn-label" data-i18n="floatBtn">悬浮按钮</span></h3>
+        <div class="toggle-row">
+          <span id="theme-float-btn-desc" data-i18n="floatBtnDesc">在DeepSeek页面显示悬浮收藏按钮</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-float-btn" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="theme-section">
+        <button id="btn-reset-settings" class="btn btn-outline"><span id="theme-reset-label" data-i18n="themeReset">恢复默认设置</span></button>
+      </div>
+    </div>
+
+    <!-- 5. 关于 -->
+    <div id="tab-about" class="tab-content"></div>
+  </div>
+
+  <!-- 颜色取色器模态框 -->
+  <div id="color-picker-modal" class="color-picker-overlay" style="display:none;">
+    <div class="color-picker-dialog">
+      <h3><span id="color-picker-title" data-i18n="colorPickerTitle">🎨 创建我的主题</span></h3>
+      <div class="color-picker-row">
+        <label><span id="color-picker-primary-label" data-i18n="colorPickerPrimaryLabel">主色调</span></label>
+        <input type="color" id="custom-color-primary" value="#1890ff">
+        <span class="color-value" id="custom-color-primary-val">#1890ff</span>
+      </div>
+      <div class="color-picker-row">
+        <label><span id="color-picker-bg-label" data-i18n="colorPickerBgLabel">背景色</span></label>
+        <input type="color" id="custom-color-bg" value="#ffffff">
+        <span class="color-value" id="custom-color-bg-val">#ffffff</span>
+      </div>
+      <div class="color-picker-row">
+        <label><span id="color-picker-text-label" data-i18n="colorPickerTextLabel">文字色</span></label>
+        <input type="color" id="custom-color-text" value="#333333">
+        <span class="color-value" id="custom-color-text-val">#333333</span>
+      </div>
+      <div id="color-preview-area" class="color-preview-area" style="background:#ffffff;color:#333333;">
+        <div class="preview-label"><span id="color-picker-preview-label" data-i18n="colorPickerPreviewLabel">实时预览</span></div>
+        <div class="preview-text"><span id="color-picker-preview-text" data-i18n="colorPickerPreviewText">预览效果</span> Aa…</div>
+      </div>
+      <div class="color-picker-actions">
+        <button id="btn-color-picker-cancel" class="btn btn-outline" data-i18n="cancel">取消</button>
+        <button id="btn-color-picker-save" class="btn btn-primary" data-i18n="saveAndApply">保存并应用</button>
+      </div>
+    </div>
+  </div>
+
+<script src="panel-modules/module-i18n.js"></script>
+<script src="panel-modules/module-storage.js"></script>
+<script src="panel-modules/module-dom.js"></script>
+<script src="panel-modules/module-theme.js"></script>
+<script src="panel-modules/module-panel.js"></script>
+<script src="panel-modules/module-history.js"></script>
+<script src="panel-modules/module-search.js"></script>
+<script src="panel-modules/module-bookmarks.js"></script>
+<script src="panel-modules/module-messages.js"></script>
+<script src="panel-modules/module-folders.js"></script>
+<script src="panel.js"></script>
+</body>
+</html>
