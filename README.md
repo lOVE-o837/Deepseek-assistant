@@ -2,7 +2,7 @@
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
-![Version](https://img.shields.io/badge/version-1.4.0-brightgreen)
+![Version](https://img.shields.io/badge/version-1.4.1-brightgreen)
 
 **让你的 DeepSeek 更好用** — 对话搜索、收藏管理、主题切换、中英文国际化……  
 所有数据均存储在本地浏览器中，无追踪、无后端。
