@@ -1,10 +1,10 @@
-# DeepSeek 助手 <img width="64" height="64" alt="icon48" src="https://github.com/user-attachments/assets/a284a367-9dc2-4ace-9ec4-acaf1ee8a9e3" />
+# DeepSeek 助手 🐋
 
 **增强 DeepSeek 网页版功能的浏览器扩展，让对话管理更高效。**
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
-![Version](https://img.shields.io/badge/version-1.4.0-brightgreen)
+![Version](https://img.shields.io/badge/version-1.4.1-brightgreen)
 
 ## ✨ 核心功能
 
@@ -31,6 +31,7 @@
 
 ### 🎨 外观与操作
 - **6套预设主题**：深海蓝、经典黑、护眼绿…… 支持自定义取色器与跟随系统模式
+- **🎁 彩蛋主题**：全新隐藏主题特效，可通过社区互动解锁
 - **面板控制**：标题栏长按拖拽移动，按对话 URL 记忆位置；一键重置面板位置与尺寸
 - **预设尺寸切换**：通过悬浮按钮长按菜单，快速切换面板尺寸（原/小/中/大），尺寸自动记忆
 - **悬浮按钮**：右下角 ⭐ 收藏按钮，支持拖拽换位；长按弹出快捷菜单（打开面板、复制链接、切换尺寸）
@@ -38,7 +39,7 @@
 - **快捷键**：`Alt+K` 呼出面板，`Ctrl+Shift+X` 收藏对话，`Esc` 关闭面板
 
 ### 🧩 其他贴心功能
-- **设置页重构**：结构化的设置中心，清晰展示语言、快捷操作、数据安全提示
+- **设置页重构**：结构化的设置中心，清晰展示语言、快捷操作、数据安全提示，并提供**反馈入口**
 - **存储用量监控**：实时显示已用空间（精确到小数点后两位百分比），超过 80% 警告，超过 95% 严重警告
 - **文件夹下拉菜单**：支持搜索文件夹名，匹配关键词高亮，新建按钮固定可见
 - **移动到文件夹弹窗**：添加搜索框、滚动条美化、匹配计数，文件夹过多时轻松定位
@@ -49,35 +50,34 @@
 - **标题栏拖拽防误触**：需移动超过 5px 才触发面板拖动
 - **字体渲染优化**：Windows 下中文字体清晰锐利，无笔画重叠
 
-## 🏗️ 项目结构（v1.4.0 模块化架构）
-
+## 🏗️ 项目结构（v1.4.1 模块化架构）
 ```
 DeepSeek-Assistant/
 ├── manifest.json
-├── panel.html              # 面板静态结构
-├── panel.css               # 全部样式
-├── background.js           # 后台中转（消息路由、存储代理）
-├── panel.js                # 主控（全局状态、初始化、事件绑定）
-├── content/                # Content Script 模块（原 ~2000 行 content.js 拆分）
-│   ├── content-utils.js        # 纯工具函数（showToast、escapeHTML、getTrustedTitle 等）
-│   ├── content-panel.js        # 面板 iframe 注入、拖拽、位置记忆
-│   ├── content-bookmark.js     # 对话收藏 + 消息收藏系统 + 星标按钮注入
-│   ├── content-float-btn.js    # 悬浮按钮 + 长按菜单 + 尺寸切换
-│   ├── content-sidebar.js      # 侧边栏对话列表抓取
-│   ├── content-search.js       # 当前页面内容搜索 + 高亮定位
-│   └── content-core.js         # 核心骨架（初始化、消息路由、确认对话框、语言同步）
-└── panel-modules/          # 面板业务模块
-    ├── module-i18n.js      # 国际化（150+ 翻译键，中英文完整覆盖）
-    ├── module-storage.js   # 存储与通信
-    ├── module-dom.js       # DOM 工具函数（formatTime、debounce、highlightText 等）
-    ├── module-theme.js     # 主题定义 + 应用 + 取色器 + 颜色计算
-    ├── module-panel.js     # 标签切换、面板控制、设置页、存储用量
-    ├── module-history.js   # 历史搜索 + CSV 导出
-    ├── module-search.js    # 当前对话搜索 + 结果复制
-    ├── module-bookmarks.js # 对话收藏管理（导出/导入/清空/空状态）
-    ├── module-messages.js  # 消息收藏管理（卡片渲染/事件绑定/空状态）
-    └── module-folders.js   # 文件夹管理 + 移动弹窗 + 统计条
-```
+├── panel.html # 面板静态结构（含主题特效元素）
+├── panel.css # 全部样式（含彩蛋主题特效）
+├── background.js # 后台中转（消息路由、存储代理）
+├── panel.js # 主控（全局状态、初始化、事件绑定、默认主题修复）
+├── content/ # Content Script 模块（原 ~2000 行 content.js 拆分）
+│ ├── content-utils.js # 纯工具函数（showToast、escapeHTML、getTrustedTitle 等）
+│ ├── content-panel.js # 面板 iframe 注入、拖拽、位置记忆
+│ ├── content-bookmark.js # 对话收藏 + 消息收藏系统 + 星标按钮注入
+│ ├── content-float-btn.js # 悬浮按钮 + 长按菜单 + 尺寸切换
+│ ├── content-sidebar.js # 侧边栏对话列表抓取
+│ ├── content-search.js # 当前页面内容搜索 + 高亮定位
+│ └── content-core.js # 核心骨架（初始化、消息路由、确认对话框、语言同步）
+└── panel-modules/ # 面板业务模块
+├── module-i18n.js # 国际化（150+ 翻译键，中英文完整覆盖）
+├── module-storage.js # 存储与通信
+├── module-dom.js # DOM 工具函数（formatTime、debounce、highlightText 等）
+├── module-theme.js # 主题定义 + 应用 + 取色器 + 颜色计算（含彩蛋主题）
+├── module-panel.js # 标签切换、面板控制、设置页、存储用量、反馈与奖励系统
+├── module-history.js # 历史搜索 + CSV 导出
+├── module-search.js # 当前对话搜索 + 结果复制
+├── module-bookmarks.js # 对话收藏管理（导出/导入/清空/空状态）
+├── module-messages.js # 消息收藏管理（卡片渲染/事件绑定/空状态）
+└── module-folders.js # 文件夹管理 + 移动弹窗 + 统计条
+
 
 ## 📥 安装方式
 
@@ -90,12 +90,12 @@ DeepSeek-Assistant/
 3. 开启左下角的 **"开发人员模式"**
 4. 点击 **"加载解压缩的扩展"**，选择刚解压的文件夹即可
 
-> 更多详情请查阅 [KNOWN_ISSUES.md](./docs/KNOWN_ISSUES.md)
+> 更多详情请查阅 [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
 
 ## 🤝 参与贡献
 
 欢迎提交 Bug 报告、功能建议或 Pull Request！
-请先查阅 [CONTRIBUTING.md](./docs/CONTRIBUTING.md) 了解贡献规范。
+请先查阅 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解贡献规范。
 
 ## 📄 许可证
 
@@ -103,11 +103,9 @@ DeepSeek-Assistant/
 
 ## 📚 文档索引
 
-- [已知问题与限制](./docs/KNOWN_ISSUES.md) — 了解技术限制和常见问题
+- [已知问题与限制](./KNOWN_ISSUES.md) — 了解技术限制和常见问题
 - [常见问题 (FAQ)](./FAQ.md) — 快速解答使用中的疑惑
-- [功能展示](./SHOWCASE.md) — 核心功能截图与说明
 
 ## 📝 更新日志
 
 完整版本历史请查阅 [CHANGELOG.md](./CHANGELOG.md)。
-```
