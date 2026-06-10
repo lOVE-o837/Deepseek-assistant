@@ -1,31 +1,31 @@
-# 隐私权政策
+# Privacy Policy
 
-**最后更新日期：2026-06-10**
+**Last updated: 2026-06-10**
 
-## 数据收集
+## Data Collection
 
-DeepSeek 助手扩展**不收集、不存储、不传输任何用户个人数据**。
+The DeepSeek Assistant extension **does not collect, store, or transmit any personal user data**.
 
-## 本地存储
+## Local Storage
 
-所有用户数据（包括收藏对话、收藏消息、文件夹、主题偏好、语言设置等）均存储在用户浏览器的本地存储（`chrome.storage.local`）中，完全离线，不经过任何远程服务器。
+All user data — including bookmarked conversations, bookmarked messages, folders, theme preferences, and language settings — is stored entirely in the browser's local storage (`chrome.storage.local`). Data is kept fully offline and never passes through any remote server.
 
-## 数据共享
+## Data Sharing
 
-由于本扩展不收集任何数据，因此不存在与第三方共享数据的情况。
+Since this extension does not collect any data, there is no data sharing with third parties.
 
-## 权限使用
+## Permission Usage
 
-本扩展请求的权限仅用于实现核心功能：
-- `storage`：本地数据持久化
-- `activeTab`：检测当前页面是否为 DeepSeek
-- `scripting`：注入功能面板和悬浮按钮
-- `alarms`：维持后台服务活跃
-- 主机权限（`chat.deepseek.com`）：仅在 DeepSeek 页面运行
+The permissions requested by this extension are used solely to deliver core functionality:
+- `storage`: Local data persistence
+- `activeTab`: Detect whether the current page is a DeepSeek page
+- `scripting`: Inject the feature panel and floating button
+- `alarms`: Keep the background service alive
+- Host permission (`chat.deepseek.com`): Run exclusively on DeepSeek pages
 
-以上权限均不用于收集用户数据。
+None of these permissions are used to collect user data.
 
-## 联系方式
+## Contact
 
-如有任何隐私相关问题，请在 GitHub Issues 提交：
+For any privacy-related questions, please file an issue on GitHub:
 https://github.com/lOVE-o837/Deepseek-assistant/issues
