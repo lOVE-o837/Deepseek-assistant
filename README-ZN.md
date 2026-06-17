@@ -77,12 +77,15 @@ DeepSeek-Assistant/
 ├── module-bookmarks.js # 对话收藏管理（导出/导入/清空/空状态）
 ├── module-messages.js # 消息收藏管理（卡片渲染/事件绑定/空状态）
 └── module-folders.js # 文件夹管理 + 移动弹窗 + 统计条
-
+```
 
 ## 📥 安装方式
 
-### 方式一：Edge 加载项商店（推荐）
-> 🔗 **[点击此处安装](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk)**
+### 方式一：官方商店（推荐）
+| 浏览器 | 商店链接 |
+|:---|:---|
+| Microsoft Edge | [![Edge Add-ons](https://img.shields.io/badge/Edge-Add--ons-0078D7?style=flat&logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk) |
+| Google Chrome | [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat&logo=googlechrome)](https://chromewebstore.google.com/detail/mpgaedmobnhoaceeefcafjofclenjbah) |
 
 ### 方式二：开发者模式侧载
 1. 在本仓库 [Releases](https://github.com/lOVE-o837/Deepseek-assistant/releases) 页面下载最新版本的 `Source code (zip)` 并解压
