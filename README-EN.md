@@ -81,8 +81,12 @@ DeepSeek-Assistant/
 
 ## 📥 Installation
 
-### Method 1: Edge Add-ons Store (Recommended)
-> 🔗 **[Click here to install](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk)**
+### Method 1: Browser Store (Recommended)
+
+| 浏览器 | 商店链接 |
+|:---|:---|
+| Microsoft Edge | [![Edge Add-ons](https://img.shields.io/badge/Edge-Add--ons-0078D7?style=flat&logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk) |
+| Google Chrome | [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat&logo=googlechrome)](https://chromewebstore.google.com/detail/mpgaedmobnhoaceeefcafjofclenjbah) |
 
 ### Method 2: Developer Mode Sideloading
 1. Download the latest `Source code (zip)` from the [Releases](https://github.com/lOVE-o837/Deepseek-assistant/releases) page and extract it.
