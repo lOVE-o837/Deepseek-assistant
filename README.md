@@ -32,8 +32,6 @@
 
 
 
-**手动安装：**  
-从 [GitHub Releases](https://github.com/lOVE-o837/Deepseek-assistant/releases) 下载最新版本，在 `edge://extensions` 中开启「开发人员模式」后加载解压缩的扩展。
 
 ---
 
