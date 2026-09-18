@@ -108,4 +108,15 @@
 ## 📄 许可证
 
 基于 [Apache License 2.0](./LICENSE) 开源 © [{{lOVE-o837}}](https://github.com/{{lOVE-o837}})
+
+
+## 💖 开发支持
+
+如果这个项目对你有所帮助，欢迎通过以下方式支持我继续维护和更新：
+
+- 🧡 **[爱发电](https://afdian.com/a/Voyager688as)** — 国内用户支持
+- ☕ **[Ko-fi](https://ko-fi.com/voyager688productivity)** — 海外用户支持
+
+感谢每一份支持，它是我持续迭代的最大动力。
+
 ```
