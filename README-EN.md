@@ -9,7 +9,7 @@
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
-![Version](https://img.shields.io/badge/version-1.5.0-brightgreen)
+![Version](https://img.shields.io/badge/version-2.0.0-brightgreen)
 
 ## ✨ Core Features
 
@@ -40,7 +40,7 @@
 - **Folder Management** — Create, rename, delete folders with search and quick filtering
 - **Statistics** — Real-time conversation and message counts, today/week additions
 - **Time Display** — Relative and absolute time toggle
-- **Import/Export** — JSON/TXT/Markdown backup
+- **Import/Export** — JSON/TXT/Markdown backup; bookmarks can also be exported to HTML, browser-print PDF, and Word / DOCX, with better fidelity for code blocks, math formulas, and Mermaid diagrams
 - **Collapsible Cards** — Conversation cards fold/expand with state persistence
 
 ### 🌐 Internationalization
@@ -101,17 +101,10 @@ DeepSeek-Assistant/
 
 ## 📥 Installation
 
-### Option 1: Official Stores (Recommended)
 | Browser | Store Link |
 |:---|:---|
 | Microsoft Edge | [![Edge Add-ons](https://img.shields.io/badge/Edge-Add--ons-0078D7?style=flat&logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk) |
 | Google Chrome | [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat&logo=googlechrome)](https://chromewebstore.google.com/detail/mpgaedmobnhoaceeefcafjofclenjbah) |
-
-### Option 2: Developer Mode Sideload
-1. Download the latest `Source code (zip)` from [Releases](https://github.com/lOVE-o837/Deepseek-assistant/releases) and extract
-2. Open your browser and navigate to `edge://extensions` (Edge) or `chrome://extensions` (Chrome)
-3. Enable **"Developer mode"**
-4. Click **"Load unpacked"** and select the extracted folder
 
 ## 🤝 Contributing
 
