@@ -109,7 +109,7 @@ DeepSeek-Assistant/
 ## 🤝 Contributing
 
 Bug reports, feature suggestions, and pull requests are welcome!
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) first.
+Please read [CONTRIBUTING.md](./docs/CONTRIBUTING.md) first.
 
 ## 📄 License
 
