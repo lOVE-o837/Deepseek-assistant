@@ -107,7 +107,7 @@
 
 ## 📄 许可证
 
-基于 [Apache License 2.0](./LICENSE) 开源 © [{{lOVE-o837}}](https://github.com/{{lOVE-o837}})
+基于 [Apache License 2.0](./LICENSE) 开源 © [lOVE-o837](https://github.com/lOVE-o837)
 
 
 ## 💖 开发支持
