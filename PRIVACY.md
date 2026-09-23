@@ -1,47 +1,60 @@
 # Privacy Policy
 
-**Last updated: 2026-06-29**
+**Last updated: 2026-09-23**
 
 ## Data Collection
 
-The DeepSeek Assistant extension **does not collect, store, or transmit any personal user data**.
+DeepSeek Assistant does not collect or transmit personally identifiable user data to developer-operated servers.
 
-## Anonymous Usage Statistics (v1.4.3+)
+## Anonymous Usage Statistics
 
-Starting with version 1.4.3, the extension collects **completely anonymous** usage data to help improve the product. This includes:
+The extension collects limited anonymous usage statistics to help improve the product.
 
-- **Feature usage frequency**: e.g., how many times "History Search" or "Bookmark Conversation" is used
-- **Platform information**: browser type (Edge or Chrome), operating system language, extension version
-- **Anonymous session identifier**: a randomly generated temporary identifier that cannot be linked to any individual
+This may include:
 
-**We do NOT collect:**
-- ❌ Search keywords
-- ❌ Conversation titles or content
-- ❌ Bookmarked content
-- ❌ Any personally identifiable information (name, email, IP address, etc.)
+- Feature usage frequency
+- Browser type (Chrome or Edge)
+- Operating system language
+- Extension version
+- An anonymous session identifier that cannot be used to identify an individual
 
-All usage data is transmitted over HTTPS to Cloudflare Workers and is used solely for analyzing feature usage trends and improving the extension. Data is not shared with any third party.
+We do NOT collect or transmit:
+
+- Search keywords
+- Conversation titles or conversation content
+- Bookmarked content
+- Personally identifiable information such as name or email address
+
+Anonymous usage statistics are transmitted over HTTPS to Cloudflare Workers and are used only for product improvement and aggregate usage analysis.
 
 ## Local Storage
 
-All user data — including bookmarked conversations, bookmarked messages, folders, theme preferences, and language settings — is stored entirely in the browser's local storage (`chrome.storage.local`). Data is kept fully offline and never passes through any remote server.
+Extension-managed user content — including bookmarked conversations, bookmarked messages, folders, theme preferences, and language settings — is stored locally in the browser using `chrome.storage.local`.
+
+Saved conversations, bookmarked content, search keywords, and other locally stored extension content are not transmitted to developer-operated servers.
+
+Anonymous usage statistics are handled separately as described above.
 
 ## Data Sharing
 
-Since this extension does not collect any personal data, and anonymous usage data is only used for product improvement, there is no sharing of personal data with third parties.
+DeepSeek Assistant does not sell user data.
+
+Anonymous usage statistics are used only for product improvement and are not shared with third parties except as necessary to operate the telemetry infrastructure described above.
 
 ## Permission Usage
 
-The permissions requested by this extension are used solely to deliver core functionality:
-- `storage`: Local data persistence
-- `activeTab`: Detect whether the current page is a DeepSeek page
-- `scripting`: Inject the feature panel and floating button
-- `alarms`: Keep the background service alive
-- Host permission (`chat.deepseek.com`): Run exclusively on DeepSeek pages
+The permissions requested by this extension are used solely to provide its core functionality:
 
-None of these permissions are used to collect personal data.
+- `storage`: Store extension-managed user data locally
+- `activeTab`: Detect whether the active tab is a DeepSeek page
+- `scripting`: Inject the feature panel and floating button
+- `alarms`: Support background Service Worker reliability
+- `tabs`: Detect page refreshes and DeepSeek SPA navigation
+- Host permission (`chat.deepseek.com`): Run DeepSeek-specific features on DeepSeek pages
+
+These permissions are not used to collect personally identifiable information.
 
 ## Contact
 
-For any privacy-related questions, please file an issue on GitHub:
+For privacy-related questions, please file an issue on GitHub:
 https://github.com/lOVE-o837/Deepseek-assistant/issues
