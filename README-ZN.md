@@ -10,7 +10,7 @@
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
-![Version](https://img.shields.io/badge/version-1.5.0-brightgreen)
+![Version](https://img.shields.io/badge/version-2.0.0-brightgreen)
 
 ## ✨ 核心功能
 
@@ -41,7 +41,7 @@
 - **文件夹管理** — 自定义文件夹，支持搜索、重命名、删除，通过下拉菜单快速筛选
 - **统计信息** — 对话、消息收藏数量实时显示，今日/本周新增
 - **时间显示** — 相对时间与绝对时间切换
-- **导入导出** — JSON/TXT/Markdown 格式备份
+- **导入导出** — JSON/TXT/Markdown 格式备份；收藏还可导出为 HTML、浏览器打印 PDF 与 Word / DOCX，更好保留代码块、数学公式与 Mermaid 图表
 - **对话框片折叠** — 折叠/展开切换，状态持久化
 
 ### 🌐 国际化
@@ -102,17 +102,10 @@ DeepSeek-Assistant/
 
 ## 📥 安装方式
 
-### 方式一：官方商店（推荐）
 | 浏览器 | 商店链接 |
 |:---|:---|
 | Microsoft Edge | [![Edge Add-ons](https://img.shields.io/badge/Edge-Add--ons-0078D7?style=flat&logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk) |
 | Google Chrome | [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat&logo=googlechrome)](https://chromewebstore.google.com/detail/mpgaedmobnhoaceeefcafjofclenjbah) |
-
-### 方式二：开发者模式侧载
-1. 在 [Releases](https://github.com/lOVE-o837/Deepseek-assistant/releases) 页面下载最新版本 `Source code (zip)` 并解压
-2. 打开浏览器，地址栏输入 `edge://extensions`（Edge）或 `chrome://extensions`（Chrome）
-3. 开启 **"开发人员模式"**
-4. 点击 **"加载解压缩的扩展"**，选择解压后的文件夹
 
 ## 🤝 参与贡献
 
