@@ -2,7 +2,7 @@
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
-![Version](https://img.shields.io/badge/version-1.4.1-brightgreen)
+![Version](https://img.shields.io/badge/version-2.0.0-brightgreen)
 
 **让你的 DeepSeek 更好用** — 对话搜索、收藏管理、主题切换、中英文国际化……  
 所有数据均存储在本地浏览器中，无追踪、无后端。
@@ -41,7 +41,7 @@
 - **文件夹管理** — 自定义文件夹，支持搜索、重命名、删除，通过下拉菜单快速筛选
 - **统计信息** — 对话、消息收藏数量实时显示，今日/本周新增
 - **时间显示** — 相对时间与绝对时间切换
-- **导入导出** — JSON/TXT/Markdown 格式备份
+- **导入导出** — JSON/TXT/Markdown 格式备份；收藏还可导出为 HTML、浏览器打印 PDF 与 Word / DOCX，更好保留代码块、数学公式与 Mermaid 图表
 - **对话框片折叠** — 折叠/展开切换，状态持久化
 
 ### 🌐 国际化
@@ -96,7 +96,7 @@
 ## 📝 更新日志
 
 完整版本历史请查阅 [CHANGELOG.md](./CHANGELOG.md)。  
-最新 v1.4.0 — **内容脚本模块化拆分** 与 UI 细节打磨。
+最新 v2.0.0 — **核心架构重构**带来的稳定性提升、搜索与收藏体验优化，以及 HTML / PDF / DOCX 富内容导出。
 
 ---
 
