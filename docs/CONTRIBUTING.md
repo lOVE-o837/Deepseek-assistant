@@ -6,7 +6,7 @@
 
 ### 报告 Bug
 
-1. 前往 [GitHub Issues](https://github.com/{{你的用户名}}/Deepseek-assistant/issues)，搜索是否已有相同问题的报告。
+1. 前往 [GitHub Issues](https://github.com/lOVE-o837/Deepseek-assistant/issues)，搜索是否已有相同问题的报告。
 2. 如无重复，点击「New Issue」选择「Bug Report」模板。
 3. 填写以下信息：
    - **浏览器及版本**（如 Edge 126.0）
@@ -39,7 +39,7 @@
 
 ### 开发环境搭建
 
-1. 克隆仓库：`git clone https://github.com/{{你的用户名}}/Deepseek-assistant.git`
+1. 克隆仓库：`git clone https://github.com/lOVE-o837/Deepseek-assistant.git`
 2. 打开 `edge://extensions`，开启开发者模式。
 3. 点击「加载解压缩的扩展」，选择项目根目录。
 4. 修改代码后，点击扩展卡片上的「刷新」按钮即可生效。
