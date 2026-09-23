@@ -6,7 +6,7 @@
 A：完美支持 Microsoft Edge 和 Google Chrome（基于 Chromium 内核）。Firefox 暂不支持。
 
 **Q：如何安装？**  
-A：Edge 用户可从 [Edge 加载项商店](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk) 直接安装。也可从 [GitHub Releases](https://github.com/{{你的用户名}}/Deepseek-assistant/releases) 下载最新版本，打开 `edge://extensions` 或 `chrome://extensions`，开启开发者模式，点击「加载解压缩的扩展」选择解压文件夹。
+A：Edge 用户可从 [Edge 加载项商店](https://microsoftedge.microsoft.com/addons/detail/ofepipaoojckjihdofklifgdobndcfmk) 直接安装。也可从 [GitHub Releases](https://github.com/lOVE-o837/Deepseek-assistant/releases) 下载最新版本，打开 `edge://extensions` 或 `chrome://extensions`，开启开发者模式，点击「加载解压缩的扩展」选择解压文件夹。
 
 **Q：需要什么权限？**  
 A：仅请求访问 `chat.deepseek.com` 域名，用于注入面板和悬浮按钮。不访问其他网站，不收集个人信息。
@@ -57,7 +57,7 @@ A：
 ### 反馈与支持
 
 **Q：遇到 Bug 如何反馈？**  
-A：请在 [GitHub Issues](https://github.com/{{你的用户名}}/Deepseek-assistant/issues) 提交，附上浏览器版本、扩展版本、问题描述和复现步骤。也可在 Edge 商店评论区留言。
+A：请在 [GitHub Issues](https://github.com/lOVE-o837/Deepseek-assistant/issues) 提交，附上浏览器版本、扩展版本、问题描述和复现步骤。也可在 Edge 商店评论区留言。
 
 **Q：如何提功能建议？**  
-A：欢迎在 [GitHub Issues](https://github.com/{{你的用户名}}/Deepseek-assistant/issues) 中提 Feature Request，请描述使用场景和期望效果。
+A：欢迎在 [GitHub Issues](https://github.com/lOVE-o837/Deepseek-assistant/issues) 中提 Feature Request，请描述使用场景和期望效果。
