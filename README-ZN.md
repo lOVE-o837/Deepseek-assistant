@@ -110,7 +110,7 @@ DeepSeek-Assistant/
 ## 🤝 参与贡献
 
 欢迎提交 Bug 报告、功能建议或 Pull Request！
-请先查阅 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解贡献规范。
+请先查阅 [CONTRIBUTING.md](./docs/CONTRIBUTING.md) 了解贡献规范。
 
 ## 📄 许可证
 
