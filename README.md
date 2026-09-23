@@ -81,9 +81,9 @@
 
 - [**中文完整文档**](./README-ZN.md) – 详细功能介绍、安装指南、更新日志
 - [**English Full Docs**](./README-EN.md) – Complete feature guide, installation, and changelog
-- [已知问题与限制](./KNOWN_ISSUES.md) – 当前版本的限制与临时解决方案
+- [已知问题与限制](./docs/KNOWN_ISSUES.md) – 当前版本的限制与临时解决方案
 - [常见问题 FAQ](./FAQ.md) – 使用中常见的问题解答
-- [贡献指南](./CONTRIBUTING.md) – 如何报告 Bug 或提交代码
+- [贡献指南](./docs/CONTRIBUTING.md) – 如何报告 Bug 或提交代码
 
 ---
 
@@ -103,7 +103,7 @@
 ## 🧑‍💻 参与贡献
 
 欢迎提交 Issue、功能建议或 Pull Request！  
-请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解贡献规范。
+请先阅读 [CONTRIBUTING.md](./docs/CONTRIBUTING.md) 了解贡献规范。
 
 ## 📄 许可证
 
