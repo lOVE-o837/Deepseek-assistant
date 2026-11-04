@@ -1,35 +1,41 @@
-
----
-
-## README 中文版
-
-
 # DeepSeek 助手 🐋
 
-**增强 DeepSeek 网页版功能的浏览器扩展，批量操作、格式块收藏、全量搜索、消息预览，让对话管理更高效。**
+**增强 DeepSeek 网页版功能的浏览器扩展：对话搜索、收藏整理、提示词工作台、快捷插入和 Markdown 知识笔记。**
 
 [![Manifest Version](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License](https://img.shields.io/badge/license-Apache2.0-green)](./LICENSE)
-![Version](https://img.shields.io/badge/version-2.0.0-brightgreen)
+![Version](https://img.shields.io/badge/version-2.2.0-brightgreen)
 
 ## ✨ 核心功能
+
+### 🧠 提示词工作台
+- **提示词库** — 创建、编辑、复制提示词，按标题搜索与高亮，支持分类、置顶和数量统计
+- **Markdown 编辑与预览** — 支持代码、表格、常见数学公式的格式预览；未保存退出时提醒确认
+- **自定义文件夹** — 创建、重命名、删除文件夹，按文件夹筛选并移动提示词；删除文件夹不会删除提示词
+- **批量管理** — 多选、三态全选、批量置顶／取消置顶／移动／删除，危险操作需要确认
+- **导入导出** — 提示词 JSON 备份与导入，以及支持的 Markdown / TXT 文本导入
+
+### ⚡ 提示词快捷插入
+- **快速复用** — 在支持的 DeepSeek 网页输入框中选择提示词，插入至开头、光标处或末尾，或明确选择覆盖
+- **保护原草稿** — 检查选区与草稿变化；无法安全插入时提供复制回退，**不会自动发送**
+- **快捷键设置** — Windows 建议 `Ctrl+Q` 打开选择器；实际绑定以浏览器扩展快捷键设置为准
 
 ### 🔍 三模式搜索
 - **历史对话搜索** — API 全量分页获取，秒加载全部对话，显示精确时间戳（今天/昨天/3天前/日期+周几），失败自动降级为侧边栏滚动
 - **对话消息搜索** — API 全量获取当前对话消息，支持关键词实时搜索、格式块类型过滤（代码块/表格/数学公式/Mermaid）、角色过滤（AI回答/用户提问）、轮次排序
 - **格式块跳转导航** — Ctrl+↑/↓ 快捷键在代码块、表格、标题等格式块之间快速跳转，悬浮菜单可选择优先跳转类型
 
-### ⭐ 批量操作（全新）
+### ⭐ 批量操作
 - **全选/多选** — 收藏夹、历史搜索、对话消息标签页均支持复选框多选，Shift 连续选择，按"全部/仅对话/仅消息"分类全选
 - **批量处理** — 批量删除、批量移动、批量导出、批量收藏、批量备注（覆盖/追加两种模式）
 - **操作栏智能显隐** — 选中任意项后底部浮现操作栏，按钮文字精简适配小面板
 
-### 📌 格式块独立收藏（全新）
+### 📌 格式块独立收藏
 - **四角星 ✴ 按钮** — 页面中的代码块、表格、数学公式、Mermaid 图表旁自动注入金色四角星按钮，点击即可独立收藏单个格式块
 - **五角星 ⭐ 收藏增强** — 收藏整轮 AI 回答时优先通过 API 获取完整原始 Markdown，导出时完美还原表格/代码块/公式
 - **导出到 Obsidian** — 导出文件自动清洗 BOM 头、统一换行符、移除零宽字符，拖拽到 Obsidian 可直接触发原生渲染
 
-### 👁️ 消息预览浮层（全新）
+### 👁️ 消息预览浮层
 - **悬停预览** — 对话搜索和收藏夹标签页均支持鼠标悬停 0.4 秒弹出预览浮层
 - **代码语法高亮** — 引入 highlight.js，Python/JavaScript/Mermaid 等语言完整高亮
 - **数学公式渲染** — 引入 KaTeX，块级和行内公式可视化渲染
@@ -42,7 +48,13 @@
 - **统计信息** — 对话、消息收藏数量实时显示，今日/本周新增
 - **时间显示** — 相对时间与绝对时间切换
 - **导入导出** — JSON/TXT/Markdown 格式备份；收藏还可导出为 HTML、浏览器打印 PDF 与 Word / DOCX，更好保留代码块、数学公式与 Mermaid 图表
+- **按文件夹导出** — 选择特定收藏文件夹并按文件夹分组导出
+- **Markdown 知识笔记** — 从受支持的收藏生成 Markdown，提供 Obsidian 笔记创建入口；外部应用是否成功保存需在本机确认
 - **对话框片折叠** — 折叠/展开切换，状态持久化
+
+### 🛡️ 本地备份与安全恢复
+- **完整备份** — 从设置页备份受支持的收藏、提示词、文件夹与相关设置
+- **预检恢复** — 恢复前查看差异、冲突和确认提示；优先保护已有本地数据，不静默覆盖同 ID 内容
 
 ### 🌐 国际化
 - **全界面中英文切换** — 覆盖所有标签页、弹窗、提示文字，**240+ 翻译键**
@@ -55,52 +67,18 @@
 - **面板拖拽缩放** — 右/下/右下角拖拽调整尺寸（340~900px 宽 / 400~1200px 高），尺寸记忆持久化
 - **面板拖拽移动** — 标题栏长按拖拽，按对话 URL 记忆位置
 - **悬浮按钮** — 右下角 ⭐ 收藏按钮，长按弹出快捷菜单（打开面板、复制链接、切换尺寸、格式块跳转）
-- **快捷键** — `Alt+K` 呼出面板，`Ctrl+Shift+X` 收藏对话，`Ctrl+↑/↓` 格式块跳转
+- **快捷键** — `Alt+K` 呼出面板，`Ctrl+Shift+X` 收藏对话，`Ctrl+↑/↓` 格式块跳转；浏览器可调整快捷键绑定
 
 ### 🧩 其他贴心功能
 - **Canvas 弹窗系统** — 深海极客视觉风格，版本更新弹窗优先显示，格式块提示弹窗在关闭后才弹出
 - **存储用量监控** — 实时显示已用空间，超过 80% 警告
 - **设置页** — 结构化设置中心，包含反馈入口和专属奖励兑换
-- **匿名使用统计** — 仅收集功能使用频率，用于产品改进
-
-## 🏗️ 项目结构（v1.5.0 模块化架构）
-```
-DeepSeek-Assistant/
-├── manifest.json
-├── panel.html / panel.css
-├── background.js
-├── panel.js
-├── lib/                     # 第三方库
-│   ├── marked.min.js        # Markdown 渲染
-│   ├── highlight.min.js     # 代码语法高亮
-│   ├── highlight-theme.css
-│   ├── katex.min.js         # 数学公式渲染
-│   └── katex.min.css
-├── content/                 # Content Script 模块
-│   ├── content-utils.js
-│   ├── content-panel.js
-│   ├── content-bookmark.js  # 五角星 ⭐ + 四角星 ✴ 收藏系统
-│   ├── content-float-btn.js
-│   ├── content-sidebar.js   # API 全量分页 + DOM 降级
-│   ├── content-search.js
-│   ├── content-canvas-modal.js
-│   ├── content-changelog.js
-│   └── content-core.js      # 弹窗队列管理器 + API 请求代理
-├── panel-modules/           # 面板业务模块
-│   ├── module-i18n.js       # 国际化（240+ 翻译键）
-│   ├── module-storage.js
-│   ├── module-dom.js
-│   ├── module-theme.js
-│   ├── module-panel.js
-│   ├── module-history.js    # API 全量获取 + 精确时间戳
-│   ├── module-search.js     # API 全量消息 + 预览浮层 + 批量操作
-│   ├── module-bookmarks.js  # SelectionState + 折叠 + 全选模式
-│   ├── module-messages.js
-│   └── module-folders.js
-└── assets/images/
-```
+- **有限功能使用统计** — 通过 Cloudflare Workers 处理功能类别、平台、语言、版本、时间等统计字段；服务器可使用请求 IP 做每日去重。详情参见[隐私政策](./PRIVACY.md)
 
 ## 📥 安装方式
+
+实际可安装版本及上线进度以商店页面为准。
+
 
 | 浏览器 | 商店链接 |
 |:---|:---|
@@ -117,6 +95,10 @@ DeepSeek-Assistant/
 本项目基于 [Apache License 2.0](./LICENSE) 开源。
 
 ## 📚 文档索引
+
+- [v2.2.0 更新与操作指南（中英文）](./docs/RELEASE-2.2.0.md) — 最新功能使用方法与已知限制
+- [README 首页](./README.md) — 产品介绍与商店入口
+- [English Documentation](./README-EN.md) — 英文完整说明
 
 - [更新日志 (CHANGELOG)](./CHANGELOG.md) — 完整版本历史
 - [隐私政策 (PRIVACY)](./PRIVACY.md) — 数据收集与使用说明
