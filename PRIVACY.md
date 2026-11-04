@@ -1,60 +1,67 @@
 # Privacy Policy
 
-**Last updated: 2026-09-23**
+**Last updated: November 4, 2026**
 
-## Data Collection
+DeepSeek Assistant ("the Extension") is an independently developed browser extension that helps users find, organize, save, and reuse information from supported AI conversations. This Privacy Policy explains how information is stored and processed when you use the Extension.
 
-DeepSeek Assistant does not collect or transmit personally identifiable user data to developer-operated servers.
+## 1. Information Stored in Your Browser
 
-## Anonymous Usage Statistics
+The Extension stores information needed for its features in your browser's local storage. This may include saved conversations and messages, bookmarks, folders, prompt templates, preferences, and extension settings.
 
-The extension collects limited anonymous usage statistics to help improve the product.
+You can manage supported saved items through the Extension's interface and use its backup, import, and export features. Data you choose to export or back up is handled as part of the action you initiate.
 
-This may include:
+## 2. Limited Usage Analytics
 
-- Feature usage frequency
-- Browser type (Chrome or Edge)
-- Operating system language
-- Extension version
-- An anonymous session identifier that cannot be used to identify an individual
+To understand how features are used and improve the Extension, we collect limited usage analytics. An event sent to our analytics service contains:
 
-We do NOT collect or transmit:
+- The feature or action category;
+- Browser type (Chrome or Edge);
+- Browser language;
+- Extension version; and
+- The time of the event.
 
-- Search keywords
-- Conversation titles or conversation content
-- Bookmarked content
-- Personally identifiable information such as name or email address
+Examples include use of search, bookmarks, themes, import/export, and the feedback button.
 
-Anonymous usage statistics are transmitted over HTTPS to Cloudflare Workers and are used only for product improvement and aggregate usage analysis.
+These analytics events do not include your search queries, conversation text, saved prompts, bookmarked content, name, email address, or AI account details. The Extension does not include a persistent user ID in its current analytics event payload.
 
-## Local Storage
+Analytics events are transmitted over HTTPS to Cloudflare Workers. For aggregate counting, the service processes the request IP address provided by Cloudflare to avoid counting the same feature more than once per IP address per day. The event payload itself does not contain an IP field, and normal aggregate counters do not store IP addresses as standalone plaintext fields.
 
-Extension-managed user content — including bookmarked conversations, bookmarked messages, folders, theme preferences, and language settings — is stored locally in the browser using `chrome.storage.local`.
+Usage analytics are used to evaluate feature adoption, browser and language distribution, and product improvements.
 
-Saved conversations, bookmarked content, search keywords, and other locally stored extension content are not transmitted to developer-operated servers.
+## 3. How Information Is Used and Shared
 
-Anonymous usage statistics are handled separately as described above.
+Information saved for the Extension's features is primarily stored in your browser. The usage analytics described above do not transmit your saved conversation content, bookmarked text, search terms, or saved prompt text to our analytics service.
 
-## Data Sharing
+Cloudflare provides infrastructure for receiving and processing usage events and storing aggregate statistics. We do not sell usage analytics data.
 
-DeepSeek Assistant does not sell user data.
+The Extension may interact with supported AI websites to provide its features. Your use of those websites remains subject to their own terms and privacy policies.
 
-Anonymous usage statistics are used only for product improvement and are not shared with third parties except as necessary to operate the telemetry infrastructure described above.
+## 4. Website Access and Browser Permissions
 
-## Permission Usage
+The Extension uses browser permissions to store local information, recognize supported tabs, provide its interface and page features, and support background operation.
 
-The permissions requested by this extension are used solely to provide its core functionality:
+The primary supported website is `chat.deepseek.com`, where the Extension provides conversation search, navigation, bookmarking, and prompt insertion.
 
-- `storage`: Store extension-managed user data locally
-- `activeTab`: Detect whether the active tab is a DeepSeek page
-- `scripting`: Inject the feature panel and floating button
-- `alarms`: Support background Service Worker reliability
-- `tabs`: Detect page refreshes and DeepSeek SPA navigation
-- Host permission (`chat.deepseek.com`): Run DeepSeek-specific features on DeepSeek pages
+The Extension also requests access to `claude.ai`, `chatgpt.com`, and `gemini.google.com` for limited experimental conversation-history and panel compatibility features. These features are under development and may be incomplete or unavailable.
 
-These permissions are not used to collect personally identifiable information.
+## 5. Feedback and External Services
 
-## Contact
+Selecting the feedback option in the Extension opens a language-specific form hosted by Tally. Submitting feedback is optional. Information you enter into that form is handled by the form provider under its applicable privacy terms.
 
-For privacy-related questions, please file an issue on GitHub:
-https://github.com/lOVE-o837/Deepseek-assistant/issues
+You may also submit feedback through GitHub Issues. When you open these external services, their respective privacy policies apply.
+
+Our usage analytics record that the feedback button was selected, but do not include the text of feedback you submit.
+
+## 6. Your Choices and Contact
+
+You can manage supported bookmarks, prompts, and settings within the Extension and export or remove supported saved items using the available features. You can also remove the Extension through your browser. The handling of remaining browser data depends on your browser's storage and removal behavior.
+
+For questions about this policy or requests concerning information processed by the Extension, please contact us through a feedback channel below.
+
+- **Feedback (English):** https://tally.so/r/pbzBEB
+- **反馈（中文）：** https://tally.so/r/VLN0jE
+- **GitHub Issues:** https://github.com/lOVE-o837/Deepseek-assistant/issues
+
+## 7. Changes to This Policy
+
+We may update this Privacy Policy when the Extension's features or data practices change. The updated policy will indicate its latest revision date.
