@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated: November 4, 2026**
+**Last updated: November 14, 2026**
 
 DeepSeek Assistant ("the Extension") is an independently developed browser extension that helps users find, organize, save, and reuse information from supported AI conversations. This Privacy Policy explains how information is stored and processed when you use the Extension.
 
@@ -12,21 +12,25 @@ You can manage supported saved items through the Extension's interface and use i
 
 ## 2. Limited Usage Analytics
 
-To understand how features are used and improve the Extension, we collect limited usage analytics. An event sent to our analytics service contains:
+We use limited feature-use analytics to understand and improve the Extension. Different versions use different analytics systems.
 
-- The feature or action category;
-- Browser type (Chrome or Edge);
-- Browser language;
-- Extension version; and
-- The time of the event.
+### Legacy analytics
 
-Examples include use of search, bookmarks, themes, import/export, and the feedback button.
+Older versions send individual feature or action categories, browser type, browser language, extension version and event time over HTTPS to a Cloudflare Worker. The legacy service processes the connection IP address for daily, per-feature deduplication. Older installations that have not updated may continue to use the legacy endpoint. The legacy event body does not contain a persistent user ID, search queries, conversation text, saved prompts, bookmarked content, names, email addresses or AI account details.
 
-These analytics events do not include your search queries, conversation text, saved prompts, bookmarked content, name, email address, or AI account details. The Extension does not include a persistent user ID in its current analytics event payload.
+### V2 aggregated analytics in a later extension version
 
-Analytics events are transmitted over HTTPS to Cloudflare Workers. For aggregate counting, the service processes the request IP address provided by Cloudflare to avoid counting the same feature more than once per IP address per day. The event payload itself does not contain an IP field, and normal aggregate counters do not store IP addresses as standalone plaintext fields.
+The V2 behavior described below is intended for a later extension version; deployment of the server does not mean that a V2 client has been published in any store.
 
-Usage analytics are used to evaluate feature adoption, browser and language distribution, and product improvements.
+On Chrome, when no V2 setting exists, V2 statistics run in the background by default without a separate in-extension consent prompt. You can turn statistics off in settings. An existing V2 setting that has been turned off is preserved. On Edge and other browsers, V2 does not turn on automatically by default.
+
+V2 measures only implemented entry points, so these counts do not represent every use of a feature. The seven event families are `search_applied`, `content_open_requested`, `bookmark_created`, `prompt_reused`, `export_requested`, `organization_committed` and `survey_open_requested`. Opening a survey does not mean it was submitted.
+
+V2 sends only finite event and event-specific classification values, a coarse browser category, a UTC date and locally aggregated counts. It does not send conversation text, search terms, prompt text, filenames, account or installation identifiers, page URLs, cookies, tokens, precise event times or full user-agent strings. A network provider can still see the connection IP; we do not claim a particular retention period for Cloudflare security or access logs.
+
+V2 sends data via HTTPS to Cloudflare Workers, which writes aggregate data points to Cloudflare Analytics Engine. The client buffers at most 24 groups, each capped at 200 counts, and reserves at most three batches per UTC day; each batch contains at most eight groups and is at most 2,048 bytes. Excess or expired counts may be dropped. Turning statistics off stops new collection and sends and clears unsent groups. A request already in flight cannot always be recalled. An uncertain result is not automatically resent, so counts may be incomplete.
+
+V2 counts are partial feature-use aggregates, not user counts or proof that a page loaded, a file was saved, or a survey was submitted.
 
 ## 3. How Information Is Used and Shared
 
@@ -50,7 +54,7 @@ Selecting the feedback option in the Extension opens a language-specific form ho
 
 You may also submit feedback through GitHub Issues. When you open these external services, their respective privacy policies apply.
 
-Our usage analytics record that the feedback button was selected, but do not include the text of feedback you submit.
+Usage analytics may record that a feedback form was requested, but do not include the text of feedback you submit.
 
 ## 6. Your Choices and Contact
 
